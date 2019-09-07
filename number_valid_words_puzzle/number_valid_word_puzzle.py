@@ -20,13 +20,3 @@ class Solution:
                     number_solutions += 1
             answer.append(number_solutions)
         return answer
-
-    def find_v_two(self, words: List[str], puzzles: List[str]) -> List[int]:
-        for word, p in words, puzzles:
-            set_word = set(list(word))
-            p_list = list(p)
-            if p_list[0] in set_word:
-                comb = zip(set(list(word)), set(p_list))
-                for i in comb:
-                    if i[0] in i[1]:
-
