@@ -1,4 +1,4 @@
-from dinner_plate_stacks.DinnerPlateStacksFive import DinnerPlates
+from dinner_plate_stacks.DinnerPlateStacks import DinnerPlates
 
 
 def test_pop_push_two():
