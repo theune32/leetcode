@@ -1,0 +1,6 @@
+[
+  "test_DP_Five.py::test_pop_push_two",
+  "test_DP_Five.py::test_pop_push_one",
+  "test_DP_Five.py::test_non_max_stack",
+  "test_DP_Five.py::test_pop_at_stack"
+]
