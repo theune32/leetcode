@@ -51,16 +51,44 @@ class Solution:
             last_node = node
         return last_node
 
+    @staticmethod
+    def add_two_numbers_nice(l1: ListNode, l2: ListNode) -> ListNode:
+        """
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        """
+        current = ListNode(0)
+        head = current
+        helper = current
+        _sum = 0
+        carrier = 0
 
-# test = Solution()
-# test.addTwoNumbers(a, b)
+        while(l1 or l2):
+            if not l1:
+                _sum = l2.val + carrier
+                l2 = l2.next
+            elif not l2:
+                _sum = l1.val + carrier
+            else:
+                _sum = l1.val + l2.val + carrier
+                l1 = l1.next
+                l2 = l2.next
+            if _sum >= 10:
+                carrier = 1
+            else:
+                carrier = 0
 
-def test_simple_version():
-    l1 = Solution.create_list_node_from_string(243)
-    l2 = Solution.create_list_node_from_string(515)
-    l3 = Solution.create_list_node_from_string(758)
-    value = Solution.addTwoNumbers(l1, l2)
+            current.val = _sum % 10
+            current.next = ListNode(0)
+            current = current.next
 
-    assert value == l3
+        if carrier == 1:
+            current.val = 1
+        else:
+            helper.next = None
 
-test_simple_version()
+        return head
+
+test = Solution()
+test.add_two_numbers_nice(a, b)
